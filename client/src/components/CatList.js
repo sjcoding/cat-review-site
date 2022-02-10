@@ -19,6 +19,9 @@ const CatList = (props) => {
     }
   };
 
+  const catListItems = cats.map((cat) => {
+    <li>return ({cat.name})</li>;
+  });
   useEffect(() => {
     getCats();
   }, []);
