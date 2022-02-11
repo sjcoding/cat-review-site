@@ -12,6 +12,8 @@ exports.up = async (knex) => {
     table.string("description");
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());
     table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now());
+    table.boolean("rating").notNullable();
+    table.string("review");
   });
 };
 
