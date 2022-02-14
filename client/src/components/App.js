@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
 import CatList from "./CatList";
+import NewCatForm from "./NewCatForm";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -32,6 +33,7 @@ const App = (props) => {
         <Route exact path="/" component={CatList} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/add-new-cat" component={NewCatForm} />
       </Switch>
     </Router>
   );

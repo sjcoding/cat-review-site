@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const CatList = (props) => {
+  debugger;
+  console.log(props);
   const [cats, setCats] = useState([]);
 
   const getCats = async () => {
@@ -14,7 +16,7 @@ const CatList = (props) => {
       }
       const catDataJSON = await catData.json();
       setCats(catDataJSON.cats);
-      debugger;
+      //debugger;
     } catch (err) {
       console.error(`Error in Fetch: ${err.message}`);
     }

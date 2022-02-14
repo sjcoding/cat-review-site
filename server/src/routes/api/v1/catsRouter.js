@@ -13,4 +13,17 @@ CatsRouter.get("/", async (req, res) => {
   }
 });
 
+CatsRouter.post("/", async (req, res) => {
+  const { body } = req;
+  //Maybe add cleanInput
+  console.log(body);
+  try {
+    const postCat = await Cat.query().insertAndFetch(body);
+
+    return res.status(201).json({ cat: postCat });
+  } catch (error) {
+    return res.status(500).json({ errors: error });
+  }
+});
+
 export default CatsRouter;
