@@ -6,6 +6,7 @@ const CatDetails = (props) => {
   const catId = props.match.params.id;
 
   const getCatDetails = async () => {
+    //console.log(test)
     try {
       const getCatData = await fetch(`/api/v1/cats/${catId}`); //props.match.params.id
       if (!getCatData.ok) {
