@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 
 const CatList = (props) => {
   debugger;
@@ -27,7 +28,13 @@ const CatList = (props) => {
   }, []);
 
   const catListItems = cats.map((cat) => {
-    return <li>{cat.name}</li>;
+    return (
+    <li key={cat.id}> 
+    <Link to={`/cats/${cat.id}`}>
+	    {cat.name}
+    </Link>
+	 </li>
+    )
   });
 
   return (

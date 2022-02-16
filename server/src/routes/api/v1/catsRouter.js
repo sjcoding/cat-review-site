@@ -26,4 +26,15 @@ CatsRouter.post("/", async (req, res) => {
   }
 });
 
+CatsRouter.get("/:id", async (req, res) => {
+  const { id } = req.params
+  try{
+    const cat = await Cat.query().findById(id)
+      return res.status(200).json ({ cat: cat })
+  } catch(error){
+      return res.status(500).json({ errors: error})
+    }
+})
+
+
 export default CatsRouter;
