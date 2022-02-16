@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const CatList = (props) => {
-  debugger;
+  // debugger;
   console.log(props);
   const [cats, setCats] = useState([]);
 
