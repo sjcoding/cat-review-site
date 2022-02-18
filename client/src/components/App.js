@@ -10,7 +10,8 @@ import TopBar from "./layout/TopBar";
 
 import CatList from "./CatList";
 import NewCatForm from "./NewCatForm";
-import CatDetails from "./CatDetails"
+import CatDetails from "./CatDetails";
+import RatingButton from "./RatingButton";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -36,6 +37,7 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/add-new-cat" component={NewCatForm} />
         <Route exact path="/cats/:id" component={CatDetails} />
+        <Route exact path="/review-button" component={RatingButton} />
       </Switch>
     </Router>
   );

@@ -65,6 +65,7 @@ const NewCatForm = (props) => {
       </form>
     </div>
   );
+  
 };
 
 export default NewCatForm;

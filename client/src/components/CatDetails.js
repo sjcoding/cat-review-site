@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import RatingButton from "./RatingButton";
+import CommentForm from "./CommentForm";
 
 const CatDetails = (props) => {
   const [cat, setCat] = useState({});
@@ -27,10 +29,12 @@ const CatDetails = (props) => {
 
   return (
     <>
-    <h2 id="name">{cat.name}</h2>
-    <p id="location">{cat.description}</p>
+      <h2 id="name">{cat.name}</h2>
+      <p id="location">{cat.description}</p>
+      <RatingButton />
+      <CommentForm />
     </>
-  )
+  );
 };
 
-export default CatDetails
+export default CatDetails;

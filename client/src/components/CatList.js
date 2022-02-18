@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
 const CatList = (props) => {
-  debugger;
+  // debugger;
   console.log(props);
   const [cats, setCats] = useState([]);
 
