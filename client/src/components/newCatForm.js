@@ -24,7 +24,6 @@ const NewCatForm = (props) => {
       }
 
       const body = await response.json();
-      //debugger;
     } catch (err) {
       console.error(`Error in fetch: ${err.message}`);
     }
@@ -65,7 +64,6 @@ const NewCatForm = (props) => {
       </form>
     </div>
   );
-  
 };
 
 export default NewCatForm;
