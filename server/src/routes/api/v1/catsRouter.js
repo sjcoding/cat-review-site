@@ -1,7 +1,10 @@
 import express from "express";
 import Cat from "../../../models/Cat.js";
 
+import reviewCatRouter from "./reviewCatRouter.js";
 const CatsRouter = new express.Router();
+
+CatsRouter.use("/:catId/reviews", reviewCatRouter);
 
 CatsRouter.get("/", async (req, res) => {
   try {
@@ -15,7 +18,6 @@ CatsRouter.get("/", async (req, res) => {
 
 CatsRouter.post("/", async (req, res) => {
   const { body } = req;
-  //Maybe add cleanInput
   console.log(body);
   try {
     const postCat = await Cat.query().insertAndFetch(body);
@@ -27,14 +29,15 @@ CatsRouter.post("/", async (req, res) => {
 });
 
 CatsRouter.get("/:id", async (req, res) => {
-  const { id } = req.params
-  try{
-    const cat = await Cat.query().findById(id)
-      return res.status(200).json ({ cat: cat })
-  } catch(error){
-      return res.status(500).json({ errors: error})
-    }
-})
-
+  const { id } = req.params;
+  try {
+    const cat = await Cat.query().findById(id);
+    const reviews = await cat.$relatedQuery("reviews");
+    cat.reviews = reviews;
+    return res.status(200).json({ cat: cat });
+  } catch (error) {
+    return res.status(500).json({ errors: error });
+  }
+});
 
 export default CatsRouter;

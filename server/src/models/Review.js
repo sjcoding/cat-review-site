@@ -1,5 +1,4 @@
 const Model = require("./Model");
-const Cat = require("./Cat");
 
 class Review extends Model {
   static get tableName() {
@@ -23,7 +22,7 @@ class Review extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: [],
+      required: ["review"],
       properties: {
         review: { type: "string" },
         rating: { type: "boolean" },

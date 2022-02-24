@@ -5,34 +5,10 @@ const CommentForm = (props) => {
     review: "",
   });
 
-  // const postComment = async () => {
-  //   try {
-  //     const response = await fetch("/api/v1/cats", {
-  //       method: "POST",
-  //       headers: new Headers({
-  //         "Content-Type": "application/json",
-  //       }),
-  //       body: JSON.stringify(commentForm),
-  //     });
-  //     if (!response.ok) {
-  //       if (response.status === 422) {
-  //         const errorMessage = `Response not ok ${response.status} (${response.statusText})`;
-  //         const err = new Error(errorMessage);
-  //         throw err;
-  //       }
-  //     }
-
-  //     const body = await response.json();
-  //     //debugger;
-  //   } catch (err) {
-  //     console.error(`Error in fetch: ${err.message}`);
-  //   }
-  // };
-
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   postComment();
-  // };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    props.postComment(commentForm);
+  };
 
   const onInputChange = (event) => {
     //we care about commentForm.review
@@ -44,7 +20,7 @@ const CommentForm = (props) => {
 
   return (
     <div className="grid-container">
-      {/* <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <label>
           Comment:
           <input type="text" review="review" value={commentForm.review} onChange={onInputChange} />
@@ -53,7 +29,7 @@ const CommentForm = (props) => {
         <div className="button-group">
           <input className="button" type="submit" value="Submit" />
         </div>
-      </form> */}
+      </form>
       <p>literally anything</p>
     </div>
   );

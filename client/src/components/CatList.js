@@ -1,9 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const CatList = (props) => {
-  // debugger;
   console.log(props);
   const [cats, setCats] = useState([]);
 
@@ -17,7 +16,6 @@ const CatList = (props) => {
       }
       const catDataJSON = await catData.json();
       setCats(catDataJSON.cats);
-      //debugger;
     } catch (err) {
       console.error(`Error in Fetch: ${err.message}`);
     }
@@ -29,12 +27,10 @@ const CatList = (props) => {
 
   const catListItems = cats.map((cat) => {
     return (
-    <li key={cat.id}> 
-    <Link to={`/cats/${cat.id}`}>
-	    {cat.name}
-    </Link>
-	 </li>
-    )
+      <li key={cat.id}>
+        <Link to={`/cats/${cat.id}`}>{cat.name}</Link>
+      </li>
+    );
   });
 
   return (
