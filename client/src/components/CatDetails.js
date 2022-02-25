@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import RatingButton from "./RatingButton";
 import CommentForm from "./CommentForm";
 
 const CatDetails = (props) => {
+  const params = useParams();
+  // debugger;
   const [cat, setCat] = useState({
     reviews: [],
   });
 
-  const catId = props.match.params.id;
+  const catId = params.id;
 
   const postComment = async (formData) => {
     try {
@@ -57,13 +60,23 @@ const CatDetails = (props) => {
     return <li key={review.id}>{review.review}</li>;
   });
 
+  let showCommentPrompt = <p>Sign in to add a review!</p>;
+  if (props.user) {
+    showCommentPrompt = <CommentForm postComment={postComment} />;
+  }
+
+  let showRatingButtons = null;
+  if (props.user) {
+    showRatingButtons = <RatingButton />;
+  }
+
   return (
     <>
       <h2 id="name">{cat.name}</h2>
       <p id="location">{cat.description}</p>
-      <RatingButton />
-      <CommentForm postComment={postComment} />
       <div> {listReviews} </div>
+      <div> {showRatingButtons}</div>
+      <div> {showCommentPrompt}</div>
     </>
   );
 };
