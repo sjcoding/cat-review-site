@@ -74,6 +74,7 @@ const CatDetails = (props) => {
     <>
       <h2 id="name">{cat.name}</h2>
       <p id="location">{cat.description}</p>
+      <img src = {cat.imageURL}/>
       <div> {listReviews} </div>
       <div> {showRatingButtons}</div>
       <div> {showCommentPrompt}</div>
