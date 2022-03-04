@@ -58,6 +58,10 @@ const NewCatForm = (props) => {
             onChange={onInputChange}
           />
         </label>
+        <label>
+          Image URL:
+          <input type="text" name="imageURL" value={catForm.imageURL} onChange={onInputChange} />
+        </label>
         <div className="button-group">
           <input className="button" type="submit" value="Submit" />
         </div>
