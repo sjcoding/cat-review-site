@@ -1,0 +1,35 @@
+@import "./colors.scss";
+
+.reviewList {
+  border: solid 5px $violet;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.reviewTile {
+  background: $cream;
+
+  border: 10px solid rgba($red, 0.25);
+  margin: 0 0 1rem 0;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 5%;
+}
+//   margin-gutters: (
+//     small: 500px,
+//     medium: 50px,
+//   );
+//   // border-width: thin;
+//   sizes: (
+//     small: 0.5rem,
+//     default: 1rem,
+//     large: 3rem,
+//   );
+//   font-color: $body-font-color;
+//   font-color-alt: $body-background;
+//   radius: $global-radius;
+//   link-tint: 30%;
+// }

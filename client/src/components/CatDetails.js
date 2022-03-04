@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RatingButton from "./RatingButton";
 import CommentForm from "./CommentForm";
+import CommentTile from "./CommentTile";
 
 const CatDetails = (props) => {
   const [cat, setCat] = useState({
@@ -54,17 +55,18 @@ const CatDetails = (props) => {
   }, []);
 
   const listReviews = cat.reviews.map((review) => {
-    return <li key={review.id}>{review.review}</li>;
+    return <CommentTile key={review.id} {...review} />;
   });
 
   return (
-    <>
+    <div className="page-container">
       <h2 id="name">{cat.name}</h2>
       <p id="location">{cat.description}</p>
       <RatingButton />
       <CommentForm postComment={postComment} />
       <div> {listReviews} </div>
-    </>
+      <CommentTile review={cat.review} />
+    </div>
   );
 };
 

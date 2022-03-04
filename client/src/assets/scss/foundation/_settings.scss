@@ -90,7 +90,8 @@ $red: #d63047;
 $cream: #f9e7e6;
 $violet: #7d315b;
 $pink: #eaa9bf;
-$body-background: $light-violet;
+$lilac: #bda0bc;
+$body-background: $lilac;
 $body-font-color: $black;
 $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -361,12 +362,18 @@ $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;
 
 // 13. Callout
-// -----------
+//-----------
 
-$callout-background: $white;
-$callout-background-fade: 85%;
-$callout-border: 1px solid rgba($black, 0.25);
+$callout-background: $cream;
+$callout-backgrounds-fade: 0%;
+$callout-border: 10px solid rgba($red, 0.25);
 $callout-margin: 0 0 1rem 0;
+
+$callout-margin-gutters: (
+  small: 500px,
+  medium: 50px,
+);
+// $callout-border-width: thin;
 $callout-sizes: (
   small: 0.5rem,
   default: 1rem,
@@ -890,3 +897,48 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+// // 13. Callout
+// // -----------
+
+// $callout-background: $cream;
+// $callout-backgrounds-fade: 0%;
+// $callout-border: 10px solid rgba($red, 0.25);
+// $callout-margin: 0 0 1rem 0;
+
+// $callout-margin-gutters: (
+//   small: 500px,
+//   medium: 50px,
+// );
+// // $callout-border-width: thin;
+// $callout-sizes: (
+//   small: 0.5rem,
+//   default: 1rem,
+//   large: 3rem,
+// );
+// $callout-font-color: $body-font-color;
+// $callout-font-color-alt: $body-background;
+// $callout-radius: $global-radius;
+// $callout-link-tint: 30%;
+
+//Border
+
+// $tileBorder-background: blue;
+// $tileBorder-backgrounds-fade: 0%;
+// $tileBorder-border: 10px solid rgba($red, 0.25);
+// $tileBorder-margin: 0 0 1rem 0;
+
+// $tileBorder-margin-gutters: (
+//   small: 500px,
+//   medium: 50px,
+// );
+// // $tileBorder-border-width: thin;
+// $tileBorder-sizes: (
+//   small: 0.5rem,
+//   default: 1rem,
+//   large: 3rem,
+// );
+// $tileBorder-font-color: blue;
+// $tileBorder-font-color-alt: $body-background;
+// $tileBorder-radius: $global-radius;
+// $tileBorder-link-tint: 30%;

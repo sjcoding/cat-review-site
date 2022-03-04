@@ -1,6 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import "./CommentStyle.scss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
 // place global css here
 *,
 *::before,
@@ -11,4 +13,9 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
+}
+
+p {
+  font-family: "Outfit", "Helvetica", sans-serif;
+  font-weight: 600;
 }

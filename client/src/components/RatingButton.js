@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsDown } from "@fortawesome/free-solid-svg-icons";
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
 
 const RatingButton = (props) => {
   const [count, setCount] = useState(0);
@@ -10,11 +11,11 @@ const RatingButton = (props) => {
     <div>
       <p>Current rating: {count} votes </p>
       <button name="upvote" onClick={() => setCount(count + 1)}>
-        <FontAwesomeIcon icon={faThumbsUp} />
+        <FontAwesomeIcon className={`fas fa-4x fa-flip-horizontal`} icon={faThumbsUp} />
       </button>
-      <> </>
+      <>&nbsp;&nbsp;&nbsp;</>
       <button name="downvote" onClick={() => setCount(count - 1)}>
-        <FontAwesomeIcon icon={faThumbsDown} />
+        <FontAwesomeIcon className={`fas fa-4x `} icon={faThumbsDown} />
       </button>
     </div>
   );
