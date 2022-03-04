@@ -1,0 +1,7 @@
+@import "./colors.scss";
+
+.CatBorder {
+  border: solid 5px $violet;
+  margin: 20px;
+  border-radius: 10px;
+}
