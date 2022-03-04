@@ -1,5 +1,6 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
+@import "./photoFormat.scss";
 @include foundation-everything;
 @import "./CommentStyle.scss";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");

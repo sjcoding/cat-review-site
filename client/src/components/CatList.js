@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+//import cat1 from "./cat1.jpeg"
 
 const CatList = (props) => {
   console.log(props);
@@ -27,15 +28,19 @@ const CatList = (props) => {
 
   const catListItems = cats.map((cat) => {
     return (
+      
       <li key={cat.id}>
+        <img className = "catImage" src = {cat.imageURL}/>
         <Link to={`/cats/${cat.id}`}>{cat.name}</Link>
       </li>
+
     );
   });
 
   return (
     <>
       <h2>Rate My Cat!</h2>
+      {/* <img src = "https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"/> */}
       <div>{catListItems}</div>
     </>
   );

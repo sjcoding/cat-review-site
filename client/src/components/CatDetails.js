@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import RatingButton from "./RatingButton";
 import CommentForm from "./CommentForm";
 import CommentTile from "./CommentTile";
 
 const CatDetails = (props) => {
+  const params = useParams();
+  // debugger;
   const [cat, setCat] = useState({
     reviews: [],
   });
 
-  const catId = props.match.params.id;
+  const catId = params.id;
 
   const postComment = async (formData) => {
     try {
@@ -58,14 +61,25 @@ const CatDetails = (props) => {
     return <CommentTile key={review.id} {...review} />;
   });
 
+  let showCommentPrompt = <p>Sign in to add a review!</p>;
+  if (props.user) {
+    showCommentPrompt = <CommentForm postComment={postComment} />;
+  }
+
+  let showRatingButtons = null;
+  if (props.user) {
+    showRatingButtons = <RatingButton />;
+  }
+
   return (
+    
     <div className="page-container">
       <h2 id="name">{cat.name}</h2>
       <p id="location">{cat.description}</p>
-      <RatingButton />
-      <CommentForm postComment={postComment} />
+      <img className = "catImage" src = {cat.imageURL}/>
       <div> {listReviews} </div>
-      <CommentTile review={cat.review} />
+      <div> {showRatingButtons}</div>
+      <div> {showCommentPrompt}</div>
     </div>
   );
 };
