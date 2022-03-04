@@ -28,9 +28,12 @@ const CatList = (props) => {
 
   const catListItems = cats.map((cat) => {
     return (
+      
       <li key={cat.id}>
+        <img className = "catImage" src = {cat.imageURL}/>
         <Link to={`/cats/${cat.id}`}>{cat.name}</Link>
       </li>
+
     );
   });
 
