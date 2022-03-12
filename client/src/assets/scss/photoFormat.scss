@@ -33,6 +33,13 @@
 
 }
 
-.photoGallery img {
-    width:25%
+.container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 1rem;
+    grid-auto-flow: row;
 }
+
+// .photoGallery img {
+//     width:25%
+// }
