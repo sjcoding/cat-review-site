@@ -41,6 +41,11 @@ const NewCatForm = (props) => {
     });
   };
 
+  let showCatPrompt = <p>Sign in to add a cat!</p>;
+  if (props.user) {
+    showCatPrompt = <CommentForm postComment={postComment} />;
+  }
+
   return (
     <div className="grid-container">
       <h1>Add A New Cat</h1>
