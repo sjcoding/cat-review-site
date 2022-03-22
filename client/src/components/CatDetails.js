@@ -72,14 +72,17 @@ const CatDetails = (props) => {
   }
 
   return (
-    
     <div className="page-container">
-      <h2 id="name">{cat.name}</h2>
-      <p id="location">{cat.description}</p>
-      <img className = "catImage" src = {cat.imageURL}/>
-      <div> {listReviews} </div>
+      <center>
+        <h2 id="name">{cat.name}</h2>
+        <p id="location">{cat.description}</p>
+
+        <img className="catImage" src={cat.imageURL} />
+      </center>
+
       <div> {showRatingButtons}</div>
       <div> {showCommentPrompt}</div>
+      <div> {listReviews} </div>
     </div>
   );
 };

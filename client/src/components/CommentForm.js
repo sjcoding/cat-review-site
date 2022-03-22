@@ -8,6 +8,13 @@ const CommentForm = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     props.postComment(commentForm);
+    clearForm();
+  };
+
+  const clearForm = () => {
+    setCommentForm({
+      review: "",
+    });
   };
 
   const onInputChange = (event) => {

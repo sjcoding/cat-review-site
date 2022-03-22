@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Grid from "./Grid";
 //import cat1 from "./cat1.jpeg"
 
 const CatList = (props) => {
@@ -28,21 +29,26 @@ const CatList = (props) => {
 
   const catListItems = cats.map((cat) => {
     return (
-      <div class="photoGallery">
-      <p key={cat.id}>
-        <img className = "catImage" src = {cat.imageURL}/>
-        {/* <Link to={`/cats/${cat.id}`}>{cat.name}</Link> */}
-      </p>
-      </div>
+      <div class="catContainer">
+        <a href={`/cats/${cat.id}`}>
+          <img className="catImage" src={cat.imageURL} />
+        </a>
 
+        <Link to={`/cats/${cat.id}`}>
+          <center>{cat.name}</center>
+        </Link>
+      </div>
     );
   });
 
   return (
     <>
-      <h2>Rate My Cat!</h2>
+      <h2>
+        <center>Rate My Cat!</center>
+        <hr class="solid"></hr>
+      </h2>
       {/* <img src = "https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"/> */}
-      <div>{catListItems}</div>
+      <Grid images={catListItems} />
     </>
   );
 };

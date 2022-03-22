@@ -32,6 +32,15 @@ const NewCatForm = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     postCat();
+    clearForm();
+  };
+
+  const clearForm = () => {
+    setCatForm({
+      name: "",
+      description: "",
+      imageURL: "",
+    });
   };
 
   const onInputChange = (event) => {

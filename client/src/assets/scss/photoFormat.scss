@@ -6,7 +6,15 @@
   border: solid 5px $violet;
   margin: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  margin-bottom: 25px;
 }
+
+// width: 80%;
+// background-color: white;
+// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// margin-bottom: 25px;
 
 .photoGallery {
   display: grid;
@@ -14,6 +22,36 @@
   // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.photoGallery img {
-  width: 25%;
+.container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 1rem;
+  grid-auto-flow: row;
 }
+
+div.polaroid {
+  height: 300px;
+  width: 350px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 35px;
+  margin: 20px;
+}
+
+//old.catImage
+// .catImage {
+
+//   height: 300px;
+//   width: 350px;
+//   border: solid 5px $violet;
+//   margin: 20px;
+//   border-radius: 10px;
+// }
+div.catContainer {
+  text-align: center;
+  padding: 20px 20px;
+}
+
+// .photoGallery img {
+//     width:25%
+// }

@@ -20,6 +20,14 @@ const TopBar = ({ user }) => {
     </li>,
   ];
 
+  const authenticatedMenu = [
+    <li key="add-cat">
+      <Link to="/add-new-cat">Add New Cat</Link>
+    </li>,
+  ];
+
+  const unauthenticatedMenu = [null];
+
   return (
     <div className="top-bar">
       <div className="top-bar-left">
@@ -27,6 +35,7 @@ const TopBar = ({ user }) => {
           <li>
             <Link to="/">Home</Link>
           </li>
+          <li>{user ? authenticatedMenu : unauthenticatedMenu}</li>
         </ul>
       </div>
       <div className="top-bar-right">
